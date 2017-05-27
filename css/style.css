@@ -1,6 +1,11 @@
 .wrapper {
+	padding: 150px;
 	width: 960px;
 	margin: 0 auto;
 	background-color: #ccc;
 	text-align: center;
+}
+
+form {
+	margin: 50px;
 }
