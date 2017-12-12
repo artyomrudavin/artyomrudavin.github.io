@@ -8,10 +8,10 @@ body {
 	display: grid;
 	height: 100vh;
 	width: 100vw;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 3.25vh 1fr 4vh;
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: 10vh 1fr 20vh;
 	grid-template-areas: "header header"
-						 "main main"
+						 "aside main"
 						 "footer footer";
 }
 
@@ -19,12 +19,17 @@ header {
 	grid-area: header;
 	background: #4b4b4b;
 	display: flex;
+	flex-direction: row;
 	
 }
 
 .logo {
 	width: 100%;
 	height: 100%;
+}
+
+aside {
+	grid-area: aside;
 }
 
 main {
@@ -35,4 +40,10 @@ main {
 footer {
 	grid-area: footer;
 	background: #4b4b4b;
+}
+
+.text {
+	font-size: 26px;
+	color: #333;
+	text-align: center;
 }
