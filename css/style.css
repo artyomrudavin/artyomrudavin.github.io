@@ -1,21 +1,38 @@
 * {
 	margin: 0;
 	padding: 0;
+	font-family: "Lato", Arial, sans-serif;
 }
 
 body {
+	display: grid;
+	height: 100vh;
+	width: 100vw;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 3.25vh 1fr 4vh;
+	grid-template-areas: "header header"
+						 "main main"
+						 "footer footer";
+}
+
+header {
+	grid-area: header;
+	background: #4b4b4b;
+	display: flex;
+	
+}
+
+.logo {
 	width: 100%;
 	height: 100%;
 }
 
-.wrapper {
-	padding: 100px;
-	width: 960px;
-	margin: 0 auto;
-	background-color: #ccc;
-	text-align: center;
+main {
+	grid-area: main;
+	background: #ccc;
 }
 
-form {
-	margin: 50px;
+footer {
+	grid-area: footer;
+	background: #4b4b4b;
 }
