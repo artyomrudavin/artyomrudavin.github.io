@@ -60,7 +60,7 @@ ul
 
 h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5
 	line-height: 1.1
-	font-weight: 500
+	font-weight: bold
 
 a
 	color: $black
@@ -123,6 +123,9 @@ textarea
 
 .num
 	font-family: $else-font
+
+.hide
+	display: none
 
 .clearfix:after
 	display: block
@@ -411,7 +414,7 @@ textarea
 				border-radius: 5px
 				padding: rem(3) rem(5)
 				margin-right: rem(2)
-				font-weight: 500
+				font-weight: bold
 				transition: .5s
 				&:hover, &:focus
 					// transition: .5s // attention
@@ -424,7 +427,7 @@ textarea
 			.bk-val, .car-val, .suh-val
 				transition: .5s
 				border-bottom: 1px solid $accent
-				font-weight: 500
+				font-weight: bold
 				color: $accent
 				&:hover
 					text-decoration: none
@@ -545,7 +548,7 @@ textarea
 							font-size: 13px
 						&:nth-child(even)
 							padding-left: rem(4)
-							font-weight: 500
+							font-weight: bold
 				.resipe-result
 					text-align: center
 					.row
@@ -717,7 +720,7 @@ textarea
 								margin: 0 auto
 							div
 								font-size: 14px
-								font-weight: 500
+								font-weight: bold
 						.mode-text
 							display: grid
 							justify-content: center
@@ -802,10 +805,117 @@ textarea
 
 /* Mode 8 End */
 
-/* Madal Start */
+/* Constructor Start */
 
-.hide
-	display: none
+.constructor
+	padding-top: rem(30)
+	padding-bottom: rem(60)
+	.constructor-img
+		background: url(/img/constructor/12l-pro_big.jpg) no-repeat center top
+		min-height: rem(280)
+		flex: 1 0 35%
+		background-size: contain
+	.constructor-control
+		flex: 1 0 65%
+		height: 100%
+		padding-left: 0
+		padding-right: 0
+		.h3
+			font-size: 36px
+			font-weight: bold
+			margin-bottom: rem(8)
+			span
+				font-family: $logo-font
+				font-weight: bold
+				font-size: 40px
+		.constructor-controls-filter
+			margin-top: rem(30)
+			border: 5px solid lighten($accent, 40%)
+			padding: rem(20) rem(30)
+			.constructor-controls-filter-valume
+				.constructor-label
+					font-size: 24px
+				.constr-filter
+					.litre
+						ul
+							margin-top: rem(10)
+							padding-left: 0
+							justify-content: center
+							margin-bottom: 0
+							li
+								display: inline-block
+								.litre-vl
+									border: 2px solid #f2f2f2
+									background-color: #f2f2f2
+									border-radius: 5px
+									padding: rem(3) rem(10)
+									margin-right: rem(10)
+									font-weight: bold
+									transition: .5s
+									&:hover, &:focus
+										text-decoration: none
+										color: $black
+									&.active
+										border: 2px solid $green
+										border-radius: 5px
+										background-color: #fff
+					.choose
+						margin-top: rem(10)
+						padding-left: 0
+						margin-bottom: rem(16)
+						.col-val
+							transition: .5s
+							border-bottom: 1px solid $accent
+							font-weight: bold
+							color: $accent
+							&:hover
+								text-decoration: none
+								color: darken($accent, 30%)
+								border-bottom: 1px solid darken($accent, 30%)
+			.constr-form
+				.price
+					font-weight: bold
+					.constructor-form-label
+						font-size: 13px
+					.form-value
+						font-size: 36px
+				.constr-btn
+					margin-top: rem(15)
+					padding: rem(17) rem(40)
+					height: 80%
+					background-color: $green
+					&:hover
+						background-color: darken($green, 10%)
+				.add-buy
+					.constr-btn
+						padding: rem(10) rem(40)
+						line-height: rem(20)
+		.complication
+			margin-top: rem(20)
+			overflow: hidden
+			.row
+				justify-content: flex-start
+				.col-12
+					.line
+						font-size: 24px
+						font-weight: bold
+						margin-bottom: rem(8)
+						&:after
+							content: ""
+							position: absolute
+							height: 1px
+							top: rem(14)
+							margin-left: rem(10)
+							width: 100%
+							background-color: #f8f4ea
+				.compl-item
+					font-size: 14px
+					font-weight: bold
+					text-align: center
+
+/* Constructor End */
+
+/* Modal Start */
 
 .modal-mask
 	position: fixed
@@ -819,6 +929,8 @@ textarea
 	.modal-wrapper
 		vertical-align: middle
 		padding-top: rem(120)
+		&--buy
+			padding-top: rem(75)
 		.modal-container
 			max-height: 100vh
 			overflow: auto
@@ -831,6 +943,8 @@ textarea
 			border-radius: 2px
 			box-shadow: 0 2px 8px rgba(0,0,0,.33)
 			transition: all .3s ease
+			&--buy
+				width: rem(600)
 			.modal-close
 				cursor: pointer
 				position: absolute
@@ -853,19 +967,34 @@ textarea
 				align-items: center
 				justify-content: space-between
 				padding: rem(15)
-				h3
+				.modal-title
 					font-size: 36px
 					font-weight: bold
 					text-align: center
 					width: 100%
+					&--buy
+						font-size: 20px
 			.modal-body
 				position: relative
 				flex: 1 1 auto
-				padding: rem(15)
+				// padding: rem(15)
 				text-align: center
-				.title
+				.modal-order-price
+					margin: rem(20) 0
+					border: 5px solid lighten($accent, 40%)
+					position: relative
+					flex: 1 1 auto
+					padding: rem(15)
+					.order-price-value
+						font-size: 30px
+						font-weight: bold
+				.modal-text
 					margin-top: 0
 					margin-bottom: rem(16)
+					&--buy
+						font-size: 13px
+						font-weight: bold
+						margin-bottom: rem(10)
 				input
 					height: rem(56)
 					margin: rem(13) auto rem(13)
@@ -873,14 +1002,35 @@ textarea
 					width: rem(388)
 					max-width: 100%
 					margin-right: rem(5)
+					&.buy
+						width: 100%
+						margin: 0
+						height: inherit
+						padding: rem(10) rem(20)
+						color: $black
+				.modal-products
+					margin-top: rem(15)
+					.modal-products-title
+						margin-bottom: rem(8)
+						font-weight: bold
 				.modal-btn
 					font-size: 18px
 					height: rem(53)
 					max-width: 100%
 					margin: rem(13) auto rem(13)
 					padding: 0 rem(25)
+					cursor: pointer
+					&--buy
+						background-color: $green
+						&:hover
+							darken($green, 10%)
+			.modal-footer
+				text-align: center
+				padding: rem(15)
+				border-top: 1px solid #eceeef
+				font-size: 12px
 
-/* Madal End */
+/* Modal End */
 
 
 
