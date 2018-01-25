@@ -13,9 +13,11 @@ $(function() {
 		modal.addClass('hide');
 	});
 
-	// $(modal).on('click', function() {
-	// 	modal.addClass('hide');
-	// });
+	$(document).on('click', function(event) {
+		if ( event.target.id == 'mW1' ) {
+			modal.addClass('hide');
+		}
+	});
 
 });
 
@@ -34,9 +36,11 @@ $(function() {
 		modal.addClass('hide');
 	});
 
-	// $(modal).on('click', function() {
-	// 	modal.addClass('hide');
-	// });
+	$(document).on('click', function(event) {
+		if ( event.target.id == 'mW2' ) {
+			modal.addClass('hide');
+		}
+	});
 
 });
 
@@ -45,15 +49,15 @@ $(function() {
 $(function() {
 
 	var litreVal = $('.litre-val'),
-		bkVal = $('.bk-val'),
-		carVal = $('.car-val'),
-		suhVal = $('.suh-val'),
-		charImg = $('.char-img img'),
-		weight = $('#weight'),
-		inTank = $('#inTank'),
-		cleanSpirt = $('#cleanSpirt'),
-		inside = $('#inside'),
-		insideButle = $('#insideButle');
+	bkVal = $('.bk-val'),
+	carVal = $('.car-val'),
+	suhVal = $('.suh-val'),
+	charImg = $('.char-img img'),
+	weight = $('#weight'),
+	inTank = $('#inTank'),
+	cleanSpirt = $('#cleanSpirt'),
+	inside = $('#inside'),
+	insideButle = $('#insideButle');
 
 	var twelveTank = {
 		urlA: 'img/12/12.jpg',
@@ -250,3 +254,133 @@ $(function() {
 
 
 });
+
+// Parallax
+
+$(function() {
+
+	$(window).mousemove(function(e) {
+		var change;
+		var xpos=e.clientX;
+		var ypos=e.clientY;
+		var left= change*20;
+		var  xpos=xpos*2;ypos=ypos*2;
+		$('.layer-1').css('top',((80-(ypos/30))+"px"));
+		$('.layer-1').css('left',(( 280-(xpos/50))+"px"));
+
+	});
+
+});
+
+// Tab Additionally
+
+$(function() {
+
+	$('.tab-content').hide();
+
+	$('.tablink').each(function(i) {
+		$(this).attr('data-tab', 'tab'+i)
+	});
+
+	$('.tab-content').each(function(i) {
+		$(this).attr('data-tab', 'tab'+i)
+	});
+
+	$('.tablink').on('click', function(e) {
+		
+		e.preventDefault();
+
+		var dataTab = $(this).data('tab');
+		var getWrapper = $(this).closest('.additionally-goods');
+
+		getWrapper.find('.tab').removeClass('active');
+		$(this).closest('.tab').addClass('active');
+		getWrapper.find('.tab-content').hide();
+		getWrapper.find('.tab-content[data-tab='+dataTab+']').fadeIn('slow');
+
+	});
+
+	$('.tab-close').on('click', function(e) {
+		
+		e.preventDefault();
+
+		var dataTab = $(this).data('tab');
+		var getWrapper = $(this).closest('.additionally-goods');
+
+		getWrapper.find('.tab-content').fadeOut('fast');
+		getWrapper.find('.tab').removeClass('active');
+
+	})
+
+});
+
+// Scroll to
+
+$(function() {
+
+	$('.more a, #menu a, .goto a, .card-block a').click( function(){ // ловим клик по ссылке с классом go_to
+	var scroll_el = $(this).attr('href'); // возьмем содержимое атрибута href, должен быть селектором, т.е. например начинаться с # или .
+        if ($(scroll_el).length != 0) { // проверим существование элемента чтобы избежать ошибки
+	    $('html, body').animate({ scrollTop: $(scroll_el).offset().top - 75}, 2000); // анимируем скроолинг к элементу scroll_el
+	}
+	    return false; // выключаем стандартное действие
+	});
+
+});
+
+// Accardeon FAQ
+
+$(function() {
+
+	$('.accordeon .card>.collapse').not(':eq(1)').hide();
+	$('.accordeon .card .x-link').not(':eq(1)').addClass('collapsed');
+
+	$('.accordeon .card .x-link').on('click', function(e) {
+		e.preventDefault();
+		console.log('click');
+		
+		var findCollapse = $(this).closest('.card-header').next('.collapse');
+		console.log(findCollapse);
+
+		var findWrapper = $(this).closest('.accordeon');
+		console.log(findWrapper);
+
+		if ( findCollapse.is(':visible') ) {
+			findCollapse.slideUp();
+			findWrapper.find('.card .x-link').addClass('collapsed');
+		} else {
+			findWrapper.find('.card>.collapse').slideUp();
+			findCollapse.slideDown();
+			findWrapper.find('.card .x-link').addClass('collapsed');
+			$(this).removeClass('collapsed');
+		};
+
+		
+	});
+
+});
+
+
+// Scroll Header
+
+$(function() {
+
+	$(document).scroll(function() {
+		
+		if ( $(this).scrollTop() > 20 ) {
+		
+			$('.header-navbar li:last-child').hide();
+			$('.header-navbar .btnHead').show();
+
+		} else {
+
+			$('.header-navbar ul li:last-child').show();
+			$('.header-navbar .btnHead').hide();
+
+		}
+
+	});
+
+});
+
+
