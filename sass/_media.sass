@@ -7,11 +7,45 @@
 	
 	/* Header Start */
 	/* Header End */
+	
+	/* Convenience Start */
+	/* Convenience End */
 
-
+	/* Characteristics Start */
+	/* Characteristics End */
 
 	/* Recipe Start */
 	/* Recipe End */
+
+	/* Modes Start */
+	/* Modes End */
+
+	/* Mode 8 Start */
+	/* Mode 8 End */
+
+	/* Constructor Start */
+	/* Constructor End */
+
+	/* About Start */
+	/* About End */
+
+	/* Additionally Start */
+	/* Additionally End */
+
+	/* Reviews Start */
+	/* Reviews End */
+
+	/* FAQ Start */
+	/* FAQ End */
+
+	/* Question Start */
+	/* Question End */
+
+	/* Footer Start */
+	/* Footer End */
+
+	/* Modal Start */
+	/* Modal End */
 
 
 /* Medium Devices, Desktops */
@@ -22,6 +56,9 @@
 
 	/* Recipe Start */
 	/* Recipe End */
+
+	.md-hidden
+		display: none!important
 	
 
 /* Small Devices, Tablets */
@@ -44,15 +81,114 @@
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width : 320px)
-	/**/
+	
+	/* Header Start */
+	/* Header End */
+	
+	/* Convenience Start */
+	/* Convenience End */
+
+	/* Characteristics Start */
+	/* Characteristics End */
+
+	/* Recipe Start */
+	/* Recipe End */
+
+	/* Modes Start */
+	/* Modes End */
+
+	/* Mode 8 Start */
+	/* Mode 8 End */
+
+	/* Constructor Start */
+	/* Constructor End */
+
+	/* About Start */
+	/* About End */
+
+	/* Additionally Start */
+	/* Additionally End */
+
+	/* Reviews Start */
+	/* Reviews End */
+
+	/* FAQ Start */
+	/* FAQ End */
+
+	/* Question Start */
+	/* Question End */
+
+	/* Footer Start */
+	/* Footer End */
+
+	/* Modal Start */
+	/* Modal End */
 
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px)
-	.col-lg-2
-		flex: 0 0 16.66667%
-		max-width: 16.66667%
+	// .col-lg-2
+	// 	flex: 0 0 16.66667%
+	// 	max-width: 16.66667%
 
+	// .col-sm-2
+	// 	flex: 0 0 16.66667%
+	// 	max-width: 16.66667%
+
+	// .col-sm-5
+	// 	flex: 0 0 41.66667%
+	// 	max-width: 41.66667%
+
+	// .col-sm-7
+	// 	flex: 0 0 58.33333%
+	// 	max-width: 58.33333%
+
+	/* Header Start */
+	/* Header End */
+	
+	/* Convenience Start */
+	/* Convenience End */
+
+	/* Characteristics Start */
+	/* Characteristics End */
+
+	/* Recipe Start */
+	/* Recipe End */
+
+	/* Modes Start */
+	/* Modes End */
+
+	/* Mode 8 Start */
+	/* Mode 8 End */
+
+	/* Constructor Start */
+	/* Constructor End */
+
+	/* About Start */
+	/* About End */
+
+	/* Additionally Start */
+	/* Additionally End */
+
+	/* Reviews Start */
+	/* Reviews End */
+
+	/* FAQ Start */
+	/* FAQ End */
+
+	/* Question Start */
+	/* Question End */
+
+	/* Footer Start */
+	/* Footer End */
+
+	/* Modal Start */
+	/* Modal End */
+
+
+/* Custom */
+// @media only screen and (min-width : 576px)
+@media only screen and (min-width : 576px)
 	.col-sm-2
 		flex: 0 0 16.66667%
 		max-width: 16.66667%
@@ -68,9 +204,6 @@
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px)
-	.hidden-up
-		display: none
-
 	.col-md-2
 		flex: 0 0 16.66667%
 		max-width: 16.66667%
@@ -94,6 +227,104 @@
 	.col-md-12
 		flex: 0 0 100%
 		max-width: 100%
+
+	.hidden-up
+		display: none
+
+	/* Header Start */
+
+	.header-nav-box
+		flex-direction: row
+	.header-brand
+		width: inherit
+		.phone-mobile, .icon
+			display: none
+	.header-navbar
+		#menu
+			display: flex
+			flex-direction: row
+			li
+				.h-link
+					&::after
+						background-color: $accent
+						display: block
+						content: ""
+						height: 2px
+						width: 0%
+						transition: width .3s ease
+					&:hover::after, &:focus::after
+						width: 100%
+			li:last-child
+				display: block
+	.header-wellcome
+		.container-fluid
+			.h2
+				font-size: 36px // 28px
+			.h3
+				font-size: 72px // 64px
+			.standart
+				top: rem(45) // rem(40)
+				left: rem(420) // rem(365)
+				font-size: 20px // 14px
+			.formAction, form
+				min-width: rem(570)
+			.order
+				.order-bg
+					display: block
+				strong
+					min-width: rem(520)
+
+
+	/* Header End */
+	
+	/* Convenience Start */
+	/* Convenience End */
+
+	/* Characteristics Start */
+	/* Characteristics End */
+
+	/* Recipe Start */
+	/* Recipe End */
+
+	/* Modes Start */
+	/* Modes End */
+
+	/* Mode 8 Start */
+	/* Mode 8 End */
+
+	/* Constructor Start */
+	/* Constructor End */
+
+	/* About Start */
+	/* About End */
+
+	/* Additionally Start */
+	/* Additionally End */
+
+	/* Reviews Start */
+
+	.recipe
+		.container-fluid
+			.row
+				.resipe-book
+					.recipe-btn
+						padding: rem(16) rem(40)
+						font-size: 20px
+
+
+	/* Reviews End */
+
+	/* FAQ Start */
+	/* FAQ End */
+
+	/* Question Start */
+	/* Question End */
+
+	/* Footer Start */
+	/* Footer End */
+
+	/* Modal Start */
+	/* Modal End */
 
 
 /* Medium Devices, Desktops */
@@ -122,10 +353,68 @@
 		flex: 0 0 58.33333%
 		max-width: 58.33333%
 
+	/* Header Start */
+
+	.header-navbar
+		#menu
+			li
+				.h-link
+					padding: rem(10) rem(20)
+			.btnHead
+				.btn
+					padding: rem(10) rem(20)
+					font-size: 16px
+			li:last-child
+				font-size: 16px
+			
+
+
+	/* Header End */
+	
+	/* Convenience Start */
+	/* Convenience End */
+
+	/* Characteristics Start */
+	/* Characteristics End */
+
+	/* Recipe Start */
+	/* Recipe End */
+
+	/* Modes Start */
+	/* Modes End */
+
+	/* Mode 8 Start */
+	/* Mode 8 End */
+
+	/* Constructor Start */
+
 	.constructor-controls-filter-valume
 		.choose
 			padding-right: 0
 			padding-left: 0
+
+	/* Constructor End */
+
+	/* About Start */
+	/* About End */
+
+	/* Additionally Start */
+	/* Additionally End */
+
+	/* Reviews Start */
+	/* Reviews End */
+
+	/* FAQ Start */
+	/* FAQ End */
+
+	/* Question Start */
+	/* Question End */
+
+	/* Footer Start */
+	/* Footer End */
+
+	/* Modal Start */
+	/* Modal End */
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px)

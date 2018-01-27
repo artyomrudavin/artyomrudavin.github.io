@@ -365,22 +365,44 @@ $(function() {
 
 $(function() {
 
-	$(document).scroll(function() {
-		
-		if ( $(this).scrollTop() > 580 ) {
-		
-			$('.header-navbar li:last-child').hide();
-			$('.header-navbar .btnHead').show();
+	$(window).scroll(function() {
 
-		} else {
+		if ( $(window).width() > 767 ) {
 
-			$('.header-navbar ul li:last-child').show();
-			$('.header-navbar .btnHead').hide();
+			if ( $(this).scrollTop() > 580 ) {
+				$('.header-navbar li:last-child').hide();
+				$('.header-navbar .btnHead').show();
+			} else {
+				$('.header-navbar ul li:last-child').show();
+				$('.header-navbar .btnHead').hide();
+			};
 
-		}
+		};
 
 	});
 
 });
 
+// Drag img
 
+$(function() {
+
+	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
+
+});
+
+// Burger bar
+
+$(function() {
+	
+	$('.icon').on('click', function(e) {
+		e.preventDefault();
+
+		$('.icon').toggleClass('active');
+
+		var menu = $('#menu');
+
+		menu.slideToggle();
+	});
+
+});
