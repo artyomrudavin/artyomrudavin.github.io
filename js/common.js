@@ -90,6 +90,90 @@ $(function() {
 
 });
 
+// Modal Control - Header
+
+$(function() {
+
+	var modal = $('#additionally-modal.modal-mask'),
+	addPrice = $('#additionally-modal #modal-value-add'),
+	addTextm = $('#additionally-modal #modal-text-add')
+	hiddenComAdd = $('#additionally-modal [name="DATA[COMMENTS]"]');
+		// console.log(hiddenComAdd);
+
+		$('#carga, #drogi, #areom, #rashiga, #popugai, #dioptr').on('click', function(e) {
+			e.preventDefault();
+		// $(this).addClass('active');
+		modal.removeClass('hide');
+
+		if ( $(this).attr('id') == 'carga' ) {
+			addPrice.text('1190₴');
+			addTextm.text('Дополнительная царга с сеткой Панченкова');
+			hiddenComAdd.val('Дополнительная царга с сеткой Панченкова');
+			// console.log('carga');
+		} else if ( $(this).attr('id') == 'dioptr' ) {
+			addPrice.text('1590₴');
+			addTextm.text('Инновационный диоптр 4 в 1');
+			hiddenComAdd.val('Инновационный диоптр 4 в 1');
+			// console.log('dioptr');
+		} else if ( $(this).attr('id') == 'popugai' ) {
+			addPrice.text('690₴');
+			addTextm.text('Непрерывный контроль крепости (Попугай)');
+			hiddenComAdd.val('Непрерывный контроль крепости (Попугай)');
+			// console.log('popugai');
+		} else if ( $(this).attr('id') == 'rashiga' ) {
+			addPrice.text('710₴');
+			addTextm.text('Кольца Рашига 1 кг');
+			hiddenComAdd.val('Кольца Рашига 1 кг');
+			// console.log('rashiga');
+		} else if ( $(this).attr('id') == 'areom' ) {
+			addPrice.text('350₴');
+			addTextm.text('Набор профессиональных ареометров и мерная колба');
+			hiddenComAdd.val('Набор профессиональных ареометров и мерная колба');
+			// console.log('areom');
+		} else if ( $(this).attr('id') == 'drogi' ) {
+			addPrice.text('95₴ / 100г');
+			addTextm.text('Специальные спиртовые дрожжи');
+			hiddenComAdd.val('Специальные спиртовые дрожжи');
+			// console.log('drogi');
+		};
+	});
+
+
+
+		$('.modal-close').on('click', function() {
+			modal.addClass('hide');
+		});
+
+		$(document).on('click', function(event) {
+			if ( event.target.id == 'mW5' ) {
+				modal.addClass('hide');
+			}
+		});
+
+	});
+
+// Date Today
+
+$(function() {
+
+	var dateNow = new Date(),
+		todayInner = $('.today');
+	// dateNow.toDateString();
+	function formatDate(date) {
+
+		var dd = date.getDate();
+		if (dd < 10) dd = '0' + dd;
+
+		var mm = date.getMonth() + 1;
+		if (mm < 10) mm = '0' + mm;
+
+		return dd + '.' + mm;
+	};
+
+	todayInner.text(formatDate(dateNow));
+	// console.log(formatDate(dateNow));
+});
+
 // Characteristics Control
 
 $(function() {
@@ -442,6 +526,7 @@ $(function() {
 		e.preventDefault();
 
 		$(this).toggleClass('active');
+		$('#litre').removeClass('hide');
 		colVal.removeClass('active');
 
 
